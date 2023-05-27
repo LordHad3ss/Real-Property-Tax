@@ -1,0 +1,397 @@
+@import 'base.css';
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('roboto-bold-webfont.woff2') format('woff2'),
+         url('roboto-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('roboto-light-webfont.woff2') format('woff2'),
+         url('roboto-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container-body {
+    height: auto;
+    margin-top: 60px;
+}
+
+.font-roboto {
+    font-family: 'Roboto-Light';
+}
+
+.font-gotham {
+    font-family: 'Gotham', sans-serif;
+}
+
+.title-1 {
+    font-family: 'Gotham', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    font-style: normal;
+    color: var(--vt-black);
+}
+
+.title-2 {
+    font-family: 'Gotham', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    font-style: normal;
+    color: var(--vt-black);
+}
+
+.title-3 {
+    font-family: 'Gotham', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    font-style: normal;
+    color: var(--vt-black);
+}
+
+.title-4 {
+    font-family: 'Gotham', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    font-style: normal;
+    color: var(--vt-black);
+}
+
+.sub-title-1 {
+    font-family: 'Roboto-Light';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--vt-black);
+}
+
+.sub-title-2 {
+    font-family: 'Roboto-Light';
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--vt-gray);
+}
+
+.text-roboto-bold {
+    font-family: 'Roboto-Bold';
+}
+
+.text-roboto {
+    font-family: 'Roboto-Light';
+}
+
+.pad-start-10p{
+    padding-left:10px;
+}
+
+.pad-start-20p{
+    padding-left:20px;
+}
+
+.pad-end-10p {
+    padding-right:10px;
+}
+
+.pad-end-20p {
+    padding-right:20px;
+}
+
+.pad-top-10p {
+    padding-top: 10px;
+}
+
+.pad-top-20p {
+    padding-top: 20px;
+}
+
+.pad-top-40p {
+    padding-top: 40px;
+}
+
+.pad-bottom-10p {
+    padding-bottom: 10px;
+}
+
+.pad-bottom-20p {
+    padding-bottom: 20px;
+}
+
+.pad-x-10p {
+    padding-right:10px;
+    padding-left:10px;
+}
+
+.pad-x-20p {
+    padding-right:20px;
+    padding-left:20px;
+}
+
+.pad-y-10p {
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.pad-y-20p {
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.pad-xy-10p {
+    padding-right:20px;
+    padding-left:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.pad-xy-20p {
+    padding-right:20px;
+    padding-left:20px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.margin-start-10p{
+    margin-left:10px;
+}
+
+.margin-start-20p{
+    margin-left:20px;
+}
+
+.margin-end-10p {
+    margin-right:10px;
+}
+
+.margin-end-20p {
+    margin-right:20px;
+}
+
+.margin-top-10p {
+    margin-top: 10px;
+}
+
+.margin-top-20p {
+    margin-top: 20px;
+}
+
+.margin-top-40p {
+    margin-top: 40px;
+}
+
+.margin-bottom-10p {
+    margin-bottom: 10px;
+}
+
+.margin-bottom-20p {
+    margin-bottom: 20px;
+}
+
+.margin-x-10p {
+    margin-right:10px;
+    margin-left:10px;
+}
+
+.margin-x-20p {
+    margin-right:20px;
+    margin-left:20px;
+}
+
+.margin-y-10p {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.margin-y-20p {
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.margin-xy-10p {
+    margin-right:20px;
+    margin-left:20px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.margin-xy-20p {
+    margin-right:20px;
+    margin-left:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.text-input {
+    padding: 10px;
+}
+
+.input-title {
+    font-family: 'Gotham', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    color: rgba(17, 17, 17, 0.48)
+}
+
+.text-input:focus {
+    border-color: var(--vt-primary);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.nav-item {
+    font-family: 'Roboto-Bold' !important;
+}
+
+.nav-item .nav-link:hover {
+    color: var(--vt-primary);
+}
+
+.footer-item {
+    color: var(--vt-black);
+}
+
+.footer-item:hover {
+    color: var(--vt-primary);
+}
+
+.box-shadow {
+    -webkit-box-shadow: 4px 0px 7px 0px rgba(182, 185, 189, 0.25);
+    box-shadow: 4px 0px 7px 0px rgba(182, 185, 189, 0.25);  
+    background: var(--vt-white);
+}
+
+.card-box {
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+    background: white;
+    border: none;
+    border-radius: 16px;
+}
+
+.scrollpink::-webkit-scrollbar
+{
+    width: 10px;  
+    height: 10px;
+}
+
+.scrollpink::-webkit-scrollbar-thumb
+{
+    background: var(--vt-tertiary);
+    border-radius: 3rem;
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-input {
+    padding: 10px 35px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    color: #888;
+}
+
+.file-input {
+    display: none;
+  }
+
+.file-container {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid var(--vt-primary);
+    border-radius: 4px;
+    width: 350px;
+    height: 80px;
+}
+
+.hide-choose-file {
+    display: none;
+}
+
+.file-label {
+    cursor: pointer;
+}
+
+#remove-file {
+    font-family: 'Roboto-Bold';
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--vt-primary);
+    cursor: pointer;
+    opacity: 85%;
+}
+
+.truncate-text {
+    display: inline-block;
+    max-width: 100%; /* Adjust the maximum width as per your requirement */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.input-container {
+    -webkit-box-shadow: 4px 0px 7px 0px rgba(182, 185, 189, 0.25);
+    box-shadow: 4px 0px 7px 4px rgba(182, 185, 189, 0.25);
+    height: 100%;
+    padding: 10px 10px 5px 5px;
+}
+
+.input {
+    border: none;
+}
+
+.input:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.no-number-scroll::-webkit-inner-spin-button,
+.no-number-scroll::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.no-number-scroll {
+    -moz-appearance: textfield;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.input-checkbox:checked {
+    background: var(--vt-primary);
+    border: solid var(--vt-primary);
+    outline: none;
+    box-shadow: none;
+}
+
+.input-checkbox:not(:checked) {
+    outline: none;
+    box-shadow: none;
+}
+
+.side-alert {
+    position: fixed;
+    top: 70px;
+    right: 30px;
+    margin-right: 90px !important;
+    transform: translateX(50%);
+    z-index: 1050;
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+}

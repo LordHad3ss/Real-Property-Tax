@@ -1,0 +1,21 @@
+/* Colors */
+.text-black {
+    color: var(--vt-black);
+}
+
+.text-primary {
+    color: var(--vt-primary) !important;
+}
+
+.text-gray {
+    color: var(--vt-gray);
+}
+
+.bg-primary {
+    background: var(--vt-primary) !important;
+}
+
+/* Hovers */
+.text-primary-hover {
+    color: var(--vt-primary-hover) !important;
+}

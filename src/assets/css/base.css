@@ -1,0 +1,17 @@
+:root {
+    --vt-primary: #3c6497;
+    --vt-secondary: #366bb0;
+    --vt-tertiary: #2c63ab;
+
+    --vt-primary-text: #ffffff;
+    --vt-secondary-text: #3c6497;
+
+    --vt-primary-hover: #315380;
+    --vt-secondary-hover: #2f5e9c;
+    --vt-tertiary-hover: #245798;
+
+    --vt-black: #000000;
+    --vt-gray: #666666;
+    --vt-white: #FFFFFF;
+    --vt-light-gray: #f2f2f2;
+}

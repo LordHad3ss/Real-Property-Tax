@@ -1,0 +1,55 @@
+.btn-status{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.button-1 {
+    border-radius: 5px;
+    border-color: transparent;
+    color: var(--vt-primary-text);
+    background-color: var(--vt-primary);
+    width: 100%;
+    height: auto;
+    min-width: 50%;
+    padding: 10px 20px;
+    font-family: 'Roboto';
+}
+
+.button-2 {
+    border-radius: 5px;
+    color: var(--vt-secondary-text);
+    border: solid var(--vt-secondary);
+    background: transparent;
+    width: 100%;
+    height: auto;
+    min-width: 50%;
+    padding: 10px 20px;
+    font-family: 'Roboto';
+}
+
+.button-3 {
+    border-radius: 100px;
+    color: var(--vt-white);
+    border: solid var(--vt-tertiary);
+    background: var(--vt-tertiary);
+    width: 100%;
+    height: auto;
+    min-width: 50%;
+    padding: 10px 20px;
+    font-family: 'Roboto';
+}
+
+.button-1:hover{
+    background-color: var(--vt-primary-hover);
+}
+
+.button-2:hover{
+    border: solid var(--vt-secondary-hover);
+}
+
+.button-3:hover{
+    background-color: var(--vt-tertiary-hover);
+    border: solid var(--vt-tertiary);
+}
