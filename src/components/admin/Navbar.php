@@ -82,7 +82,7 @@
         </div>
       </ul>
       <div class="col-auto d-none d-md-none d-lg-block">
-        <a href="/rpt/src/views/admin/Profile.php"><i class="fa fa-user text-black fs-4"></i></a>
+        <a href="/rpt/src/views/Profile.php"><i class="fa fa-user text-black fs-4"></i></a>
       </div>
     </div>
   </div>

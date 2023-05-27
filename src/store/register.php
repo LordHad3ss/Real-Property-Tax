@@ -54,7 +54,7 @@ else
                     Your code: <b/> $code </b>
                     <br/><br/>
                     Please do not share this code to others";
-        $sender = "From: countrywheelsph@gmail.com";
+        $sender = "From: rptwebmuss@gmail.com";
   
         if($ResRegister == true){
         $mail = new PHPMailer();
@@ -74,16 +74,16 @@ else
         $mail->Port = 465;
   
         //set gmail username
-        $mail->Username = "countrywheelsph@gmail.com";
+        $mail->Username = "rptwebmuss@gmail.com";
   
         //set gmail password
-        $mail->Password = "sunyomkoxcqxdkpe";
+        $mail->Password = "dxfbbwiilngeldqh";
   
         //Set email subject
         $mail->Subject = "Welcome New User";
   
         //set sender email
-        $mail->setFrom("countrywheelsph@gmail.com");
+        $mail->setFrom("rptwebmuss@gmail.com");
   
         //Enable HTML
         $mail->isHTML(true);
