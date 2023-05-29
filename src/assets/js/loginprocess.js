@@ -30,7 +30,10 @@ function login(email,password) {
                 else if (http.responseText == "Admin")
                 {
                     window.location.assign("./src/views/admin/dashboard.php");
-                    
+                }
+                else if (http.responseText == "Consumer")
+                {
+                    window.location.assign("./src/views/consumer/dashboard.php");
                 }
                 else
                 {
