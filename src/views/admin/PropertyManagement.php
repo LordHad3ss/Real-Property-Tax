@@ -5,7 +5,8 @@
     $qryConsumerList = "SELECT 
                             tbl_users_property.*,
                             tbl_rpt_consumer_details.firstname,
-                            tbl_rpt_consumer_details.lastname 
+                            tbl_rpt_consumer_details.lastname,
+                            tbl_rpt_consumer_details.email 
                         FROM 
                             `tbl_users_property` 
                         INNER JOIN 
@@ -106,12 +107,11 @@
                                                 $market_value = $rowConsumerList['market_value'];
                                                 $assessed_value = $rowConsumerList['assessed_value'];
                                                 $actual_use = $rowConsumerList['actual_use'];
+                                                $email = $rowConsumerList['email'];
                                                 $name = $firstname . ' ' . $lastname;
-                                                
-                                                
-                                            
                                             ?>
-                                            <tr class="table-item text-nowrap">
+                                            <tr class="table-item text-nowrap"  onclick="openModal('<?php echo $email ?>','<?php echo $actual_use ?>','<?php echo $assessed_value ?>');">
+                                            
                                                     <td class="p-3 ps-0 ps-2">
                                                     <?php echo $tdn; ?>
                                                     </td>
@@ -153,11 +153,60 @@
 </body>
 </html>
 
+<!-- Modal for sending email -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Deliquency</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name" disabled>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Information:</label><br/>
+            Actual Use: <input type="text" class="form-control" id="actual-use" disabled>
+            Assessed Value: <input type="text" class="form-control" id="assessed-value" disabled>
+            Tax Due: <input type="text" class="form-control" id="tax-due" disabled>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script >
 
     function addProperty() {
         window.location.assign("property_management/AddProperty.php");
     }
 
+    function openModal(email,actual,assessedVal) {
+    var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {});
+    myModal.show();
+    if (actual == "Residential Building" || actual == "Residential Lot")
+    {
+        var percentClass = 0.02;
+    }
+    else
+    {
+        var percentClass = 0.03;
+    }
+    var taxDue = assessedVal * percentClass;
+    $("#recipient-name").val(email);
+    $("#actual-use").val(actual);
+    $("#assessed-value").val(assessedVal);
+    $("#tax-due").val(taxDue);
+    }
 </script>
+
+
 
