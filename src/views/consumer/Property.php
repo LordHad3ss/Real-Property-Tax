@@ -55,9 +55,8 @@
                                         <!-- <div class="col justify-content-end d-flex">
                                             <div class="row gx-0 g-0">
                                                 <div class="col-auto">
-                                                    <button class="button-3" onclick="addProperty()">
-                                                        <i class="fa fa-plus"></i>
-                                                        Add
+                                                    <button class="button-1" onclick="goToTransactionTypes()">
+                                                        Apply
                                                     </button>
                                                 </div>
                                             </div>
@@ -90,55 +89,52 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php
-                                                if ($cntConsumerList == 0 ) 
-                                                {
-                                            ?>
-                                                <tr class="table-item text-nowrap">
-                                                <td class="p-3 ps-0 ps-2 text-center" colspan="6">
-                                                <?php echo "No Records Found"; ?>
-                                                    </td>
+                                                <?php
+                                                    if ($cntConsumerList == 0 ) 
+                                                    {
+                                                ?>
+                                                    <tr class="table-item text-nowrap">
+                                                        <td class="p-3 ps-0 ps-2 text-center" colspan="6">
+                                                            <?php echo "No Records Found"; ?>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                    } 
                                                     
-                                                </tr>
-                                            <?php
-                                            } 
-                                            
-                                            else
-                                            {
-                                            while ($rowConsumerList = mysqli_fetch_assoc($resConsumerList))
-                                            {
-                                                $tdn = $rowConsumerList['tdn'];
-                                                $firstname = $rowConsumerList['firstname'];
-                                                $lastname = $rowConsumerList['lastname'];
-                                                $pin = $rowConsumerList['pin'];
-                                                $market_value = $rowConsumerList['market_value'];
-                                                $assessed_value = $rowConsumerList['assessed_value'];
-                                                $actual_use = $rowConsumerList['actual_use'];
-                                                $name = $firstname . ' ' . $lastname;
-                                                
-                                                
-                                            
-                                            ?>
-                                            <tr class="table-item text-nowrap">
-                                                    <td class="p-3 ps-0 ps-2">
-                                                    <?php echo $tdn; ?>
-                                                    </td>
-                                                    <td class="p-3 ps-0 ps-3">
-                                                    <?php echo $name; ?>
-                                                    </td>
-                                                    <td class="p-3 ps-0 ps-3">
-                                                    <?php echo $pin; ?>
-                                                    </td>
-                                                    <td class="p-3 ps-0 ps-3">
-                                                    <?php echo $market_value; ?>
-                                                    </td>
-                                                    <td class="p-3 ps-0 ps-3">
-                                                    <?php echo $assessed_value; ?>
-                                                    </td>
-                                                    <td class="p-3 ps-0 ps-3">
-                                                    <?php echo $actual_use; ?>
-                                                    </td>
-                                                </tr>
+                                                    else
+                                                    {
+                                                    while ($rowConsumerList = mysqli_fetch_assoc($resConsumerList))
+                                                    {
+                                                        $id = $rowConsumerList['id'];
+                                                        $tdn = $rowConsumerList['tdn'];
+                                                        $firstname = $rowConsumerList['firstname'];
+                                                        $lastname = $rowConsumerList['lastname'];
+                                                        $pin = $rowConsumerList['pin'];
+                                                        $market_value = $rowConsumerList['market_value'];
+                                                        $assessed_value = $rowConsumerList['assessed_value'];
+                                                        $actual_use = $rowConsumerList['actual_use'];
+                                                        $name = $firstname . ' ' . $lastname;
+                                                    ?>
+                                                    <tr class="table-item text-nowrap cursor-pointer" onclick="goToTransactionTypes(<?php echo $id ?>)">
+                                                        <td class="p-3 ps-0 ps-2">
+                                                            <?php echo $tdn; ?>
+                                                        </td>
+                                                        <td class="p-3 ps-0 ps-3">
+                                                            <?php echo $name; ?>
+                                                        </td>
+                                                        <td class="p-3 ps-0 ps-3">
+                                                            <?php echo $pin; ?>
+                                                        </td>
+                                                        <td class="p-3 ps-0 ps-3">
+                                                            <?php echo $market_value; ?>
+                                                        </td>
+                                                        <td class="p-3 ps-0 ps-3">
+                                                            <?php echo $assessed_value; ?>
+                                                        </td>
+                                                        <td class="p-3 ps-0 ps-3">
+                                                            <?php echo $actual_use; ?>
+                                                        </td>
+                                                    </tr>
                                                 <?php } }?>
                                             </tbody>
                                         </table>
@@ -148,7 +144,6 @@
                         </div>
                     </div>
                 </div>
-               
             </div>
             <div class="pad-top-40p">
                 <?php
@@ -162,10 +157,10 @@
 </html>
 
 <script >
-
-    function addProperty() {
-        window.location.assign("property_management/AddProperty.php");
+    function goToTransactionTypes(id) {
+        var url = `transactions/TransactionTypes.php?property=${id}`;
+        var lowercaseUrl = url.toLowerCase();
+        window.location.assign(lowercaseUrl);
     }
-
 </script>
 
