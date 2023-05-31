@@ -110,7 +110,7 @@
                                                 $email = $rowConsumerList['email'];
                                                 $name = $firstname . ' ' . $lastname;
                                             ?>
-                                            <tr class="table-item text-nowrap"  onclick="openModal('<?php echo $email ?>','<?php echo $actual_use ?>','<?php echo $assessed_value ?>');">
+                                            <tr class="table-item text-nowrap"  onclick="openModal('<?php echo $email ?>','<?php echo $actual_use ?>','<?php echo $assessed_value ?>','<?php echo $tdn ?>');">
                                             
                                                     <td class="p-3 ps-0 ps-2">
                                                     <?php echo $tdn; ?>
@@ -169,6 +169,7 @@
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Information:</label><br/>
+            TDN: <input type="text" class="form-control" id="tdn" disabled>
             Actual Use: <input type="text" class="form-control" id="actual-use" disabled>
             Assessed Value: <input type="text" class="form-control" id="assessed-value" disabled>
             Tax Due: <input type="text" class="form-control" id="tax-due" disabled>
@@ -177,34 +178,18 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        <button type="button" class="btn btn-primary" onclick="sendMail();">Send Email</button>
       </div>
     </div>
   </div>
 </div>
 
-<script >
 
+
+<script src="../../assets/js/addingproperty.js"></script>
+<script >
     function addProperty() {
         window.location.assign("property_management/AddProperty.php");
-    }
-
-    function openModal(email,actual,assessedVal) {
-    var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {});
-    myModal.show();
-    if (actual == "Residential Building" || actual == "Residential Lot")
-    {
-        var percentClass = 0.02;
-    }
-    else
-    {
-        var percentClass = 0.03;
-    }
-    var taxDue = assessedVal * percentClass;
-    $("#recipient-name").val(email);
-    $("#actual-use").val(actual);
-    $("#assessed-value").val(assessedVal);
-    $("#tax-due").val(taxDue);
     }
 </script>
 

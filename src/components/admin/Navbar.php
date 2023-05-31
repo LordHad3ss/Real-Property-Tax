@@ -1,6 +1,6 @@
 <?php
  
-    $baseURL = '/rpt/src/views/admin/';
+    $baseURL = '/real-property-tax/src/views/admin/';
     
 ?>
 <nav class="navbar navbar-expand-lg navbar-light p-lg-3 box-shadow fixed-top">
@@ -11,7 +11,7 @@
     <div class="col-auto d-lg-none">
       <span class="text-font-roboto">Real Property Tax</span>  
     </div>
-    <a class="navbar-brand d-block d-md-block d-lg-none" href="/rpt/src/views/admin/Profile.php">
+    <a class="navbar-brand d-block d-md-block d-lg-none" href="/real-property-tax/src/views/admin/Profile.php">
         <i class="fa fa-user cursor-pointer"></i>
     </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -82,7 +82,7 @@
         </div>
       </ul>
       <div class="col-auto d-none d-md-none d-lg-block">
-        <a href="/rpt/src/views/Profile.php"><i class="fa fa-user text-black fs-4"></i></a>
+        <a href="/real-property-tax/src/views/Profile.php"><i class="fa fa-user text-black fs-4"></i></a>
       </div>
     </div>
   </div>

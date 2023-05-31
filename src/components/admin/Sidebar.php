@@ -1,10 +1,10 @@
 <?php
     
-    $baseURL = '/rpt/src/views/admin/';
+    $baseURL = '/real-property-tax/src/views/admin/';
 ?>
 <div class="sidebar-container">
     <div class="pad-xy-20p">
-    <img src="/rpt/src/assets/media/logo.png" class="img img-fluid" width="50">
+    <img src="/real-property-tax/src/assets/media/logo.png" class="img img-fluid" width="50">
     <span class="text-nowrap fw-bolder text-roboto-bold">Real Property Tax</span>
     </div>
     <div class="row gx-0 g-0 sidebar-item pad-end-20p">
@@ -64,7 +64,7 @@
         </a>
     </div>
     <div class="row gx-0 g-0 sidebar-item pad-end-20p">
-        <a href="<?php echo '/rpt/src/store/logout.php'; ?>" class="text-decoration-none">
+        <a href="<?php echo '/real-property-tax/src/store/logout.php'; ?>" class="text-decoration-none">
             <div class="col-auto p-3 text-gray sidebar-item">
                 <i class="fa fa-sign-out-alt pad-start-10p"></i>
                 <span class="ms-2">Logout</span>
