@@ -16,17 +16,32 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('roboto-regular-webfont.woff2') format('woff2'),
+         url('roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .container-body {
     height: auto;
     margin-top: 60px;
 }
 
 .font-roboto {
-    font-family: 'Roboto-Light';
+    font-family: 'Roboto', sans-serif;
 }
 
 .font-gotham {
     font-family: 'Gotham', sans-serif;
+}
+
+.fw-400 {
+    font-weight: 400;
+    font-style: normal;
+    font-weight: normal;
 }
 
 .title-1 {
