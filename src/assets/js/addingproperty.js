@@ -33,7 +33,7 @@ function createProperty(otp)
 
 
     var http = new XMLHttpRequest();
-        var url = '/rpt/src/store/addingproperty.php';
+        var url = '/real-property-tax/src/store/addingproperty.php';
         var params = 'property_tdn=' + property_tdn + 
                      '&property_location=' + property_location + 
                      '&property_area=' + property_area + 
@@ -70,7 +70,7 @@ function createProperty(otp)
             if(http.readyState == 4 && http.status == 200) 
             {
                 alert(http.responseText);
-                window.location.assign("/rpt/src/views/admin/PropertyManagement.php");
+                window.location.assign("/real-property-tax/src/views/admin/PropertyManagement.php");
             }   
         }
         http.send(params); 
@@ -79,5 +79,28 @@ function createProperty(otp)
 
 
 function goToPropertyManagement() {
-    window.location.assign("/rpt/src/views/admin/PropertyManagement.php");
+    window.location.assign("/real-property-tax/src/views/admin/PropertyManagement.php");
+}
+
+function openModal(email,actual,assessedVal,tdn) {
+    var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {});
+    myModal.show();
+    if (actual == "Residential Building" || actual == "Residential Lot")
+    {
+        var percentClass = 0.02;
+    }
+    else
+    {
+        var percentClass = 0.03;
+    }
+    var taxDue = assessedVal * percentClass;
+    $("#tdn").val(tdn);
+    $("#recipient-name").val(email);
+    $("#actual-use").val(actual);
+    $("#assessed-value").val(assessedVal);
+    $("#tax-due").val(taxDue);
+}
+
+function sendMail() {
+    alert('dasdas');
 }
