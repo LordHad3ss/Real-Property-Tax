@@ -82,9 +82,14 @@ function goToPropertyManagement() {
     window.location.assign("/real-property-tax/src/views/admin/PropertyManagement.php");
 }
 
-function openModal(email,actual,assessedVal,tdn) {
-    var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {});
+function openModal(email,actual,assessedVal,tdn,quarter) {
+    $("#quarter1").prop('checked', false);
+    $("#quarter2").prop('checked', false);
+    $("#quarter3").prop('checked', false);
+    $("#quarter4").prop('checked', false);
+    var myModal = new bootstrap.Modal(document.getElementById("exampleModal"), {backdrop: 'static', keyboard: false});
     myModal.show();
+    
     if (actual == "Residential Building" || actual == "Residential Lot")
     {
         var percentClass = 0.02;
@@ -99,8 +104,36 @@ function openModal(email,actual,assessedVal,tdn) {
     $("#actual-use").val(actual);
     $("#assessed-value").val(assessedVal);
     $("#tax-due").val(taxDue);
+    // $("#sendEmail").prop('visibility', visible);
+    //document.getElementById("sendEmail").style.visibility = "visible";
+    
+    const Quarter = quarter.split(",");
+    let Q1 = Quarter[0];
+    let Q2 = Quarter[1];
+    let Q3 = Quarter[2];
+    let Q4 = Quarter[3];
+    if (Q1 == 'Q1')
+    {
+        $("#quarter1").prop('checked', true);
+        if (Q2 == 'Q2')
+        {
+            $("#quarter2").prop('checked', true);
+            if (Q3 == 'Q3')
+            {
+                $("#quarter3").prop('checked', true);
+                if (Q4 == 'Q4')
+                {
+                    $("#quarter4").prop('checked', true);
+                }
+            }
+        }
+    }
+
+    
+
+
 }
 
 function sendMail() {
-    alert('dasdas');
+    
 }

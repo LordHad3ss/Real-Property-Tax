@@ -97,6 +97,7 @@ $qryInsertPropertyDetails = "INSERT INTO `tbl_users_property`
                         `actual_use`,
                         `declared_date`,
                         `effective_date`, 
+                        `property_status`, 
                         `createdBy`, 
                         `createdDate`
                     ) 
@@ -112,6 +113,7 @@ $qryInsertPropertyDetails = "INSERT INTO `tbl_users_property`
                         '$property_actual_use',
                         '$property_declared_date',
                         '$property_effective_date',
+                        'NEW',
                         '$createdBy',
                         '$createdDate'
 

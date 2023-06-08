@@ -100,6 +100,7 @@
                                             {
                                             while ($rowConsumerList = mysqli_fetch_assoc($resConsumerList))
                                             {
+                                                $propertyid = $rowConsumerList['id'];
                                                 $tdn = $rowConsumerList['tdn'];
                                                 $firstname = $rowConsumerList['firstname'];
                                                 $lastname = $rowConsumerList['lastname'];
@@ -109,9 +110,31 @@
                                                 $actual_use = $rowConsumerList['actual_use'];
                                                 $email = $rowConsumerList['email'];
                                                 $name = $firstname . ' ' . $lastname;
+
+                                                $qryListofreceipt = "SELECT 
+                                                                        propertyid,
+                                                                        GROUP_CONCAT(DISTINCT period_covered SEPARATOR ',') 
+                                                                    FROM 
+                                                                        tbl_property_reciept 
+                                                                    WHERE 
+                                                                        propertyid = $propertyid
+                                                                    GROUP BY 
+                                                                        propertyid";
+                                                $resListofreceipt = mysqli_query($conn,$qryListofreceipt);
+                                                $cnt = mysqli_num_rows($resListofreceipt);
+                                                if ($cnt != 0)
+                                                {
+                                                    $row = mysqli_fetch_array($resListofreceipt);
+                                                    $receipt = $row[1];
+                                                }
+                                                else
+                                                {
+                                                    $receipt = "";
+                                                }
+                                                
+
                                             ?>
-                                            <tr class="table-item text-nowrap"  onclick="openModal('<?php echo $email ?>','<?php echo $actual_use ?>','<?php echo $assessed_value ?>','<?php echo $tdn ?>');">
-                                            
+                                            <tr class="table-item text-nowrap cursor-pointer"  onclick="openModal('<?php echo $email ?>','<?php echo $actual_use ?>','<?php echo $assessed_value ?>','<?php echo $tdn ?>','<?php echo $receipt ?>');">
                                                     <td class="p-3 ps-0 ps-2">
                                                     <?php echo $tdn; ?>
                                                     </td>
@@ -128,7 +151,8 @@
                                                     <?php echo $assessed_value; ?>
                                                     </td>
                                                     <td class="p-3 ps-0 ps-3">
-                                                    <?php echo $actual_use; ?>
+                                                    <!-- $actual_use; -->
+                                                    <?php echo implode(' ', array_map('ucfirst',explode('_', $actual_use))) ?>
                                                     </td>
                                                 </tr>
                                                 <?php } }?>
@@ -172,13 +196,23 @@
             TDN: <input type="text" class="form-control" id="tdn" disabled>
             Actual Use: <input type="text" class="form-control" id="actual-use" disabled>
             Assessed Value: <input type="text" class="form-control" id="assessed-value" disabled>
+            <div class="mb-3">
+            <input type="checkbox" id="quarter1" name="quarter1" disabled>
+            <label for="vehicle1">Q1</label>
+            <input type="checkbox" id="quarter2" name="quarter2" disabled>
+            <label for="vehicle1">Q2</label>
+            <input type="checkbox" id="quarter3" name="quarter3" disabled>
+            <label for="vehicle1">Q3</label>
+            <input type="checkbox" id="quarter4" name="quarter4" disabled>
+            <label for="vehicle1">Q4</label>
+            </div>
             Tax Due: <input type="text" class="form-control" id="tax-due" disabled>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="sendMail();">Send Email</button>
+        <button type="button" id="sendEmail" class="btn btn-primary" onclick="sendMail();" hidden>Send Email</button>
       </div>
     </div>
   </div>
