@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="row gx-0 g-0 sidebar-item pad-end-20p">
-        <a href="<?php echo $baseURL . 'ContentManagement.php'; ?>" class="text-decoration-none">
+        <a href="<?php echo $baseURL . 'content-management/Banner.php'; ?>" class="text-decoration-none">
             <div class="col-auto p-3 text-gray sidebar-item">
                 <i class="fa fa-book-open pad-start-10p"></i>
                 <span class="ms-2">Content Management</span>
