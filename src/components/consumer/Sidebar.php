@@ -11,7 +11,7 @@
         <a href="<?php echo $baseURL . 'Dashboard.php'; ?>" class="text-decoration-none">
             <div class="col-auto p-3 text-gray sidebar-item">
                 <i class="fa fa-home pad-start-10p"></i>
-                <span class="ms-2">Dashboard </span>
+                <span class="ms-2">Home </span>
             </div>
         </a>
     </div>
