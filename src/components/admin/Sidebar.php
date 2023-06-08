@@ -48,7 +48,7 @@
         </a>
     </div>
     <div class="row gx-0 g-0 sidebar-item pad-end-20p">
-        <a href="<?php echo $baseURL . 'Users.php'; ?>" class="text-decoration-none">
+        <a href="<?php echo $baseURL . 'Users.php'; ?>" class="text-decoration-none opacity-50 remove-hover" onclick="disableLink(event)">
             <div class="col-auto p-3 text-gray sidebar-item">
                 <i class="fa fa-users pad-start-10p"></i>
                 <span class="ms-2">Users</span>
@@ -56,7 +56,7 @@
         </a>
     </div>
     <div class="row gx-0 g-0 sidebar-item pad-end-20p">
-        <a href="<?php echo $baseURL . 'Settings.php'; ?>" class="text-decoration-none">
+        <a href="<?php echo $baseURL . 'Settings.php'; ?>" class="text-decoration-none opacity-50 remove-hover" onclick="disableLink(event)">
             <div class="col-auto p-3 text-gray sidebar-item">
                 <i class="fa fa-gear pad-start-10p"></i>
                 <span class="ms-2">Settings</span>
@@ -73,4 +73,9 @@
     </div>
 </div>
 
+<script>
+    function disableLink(event) {
+        event.preventDefault();
+    }
+</script>
 
