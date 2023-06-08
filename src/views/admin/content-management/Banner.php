@@ -1,7 +1,17 @@
 <?php
     require_once '../../App.php';
     require_once '../../../store/country.php';
-    
+    require_once '../../../store/connect.php';
+     $qryAnnouncementList = "SELECT 
+                            `Ancmnt_Image`,
+                            `Ancmnt_Title`, 
+                            `Ancmnt_Link`, 
+                            `isButton`, 
+                            `isActive` 
+                        FROM 
+                            `tbl_announcement`";
+    $resAnnouncementList = mysqli_query($conn,$qryAnnouncementList);
+    $cntAnnouncementList = mysqli_num_rows($resAnnouncementList);
 ?>
 
 <body>
@@ -64,23 +74,48 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                <?php
+                                                    if ($cntAnnouncementList == 0 ) 
+                                                    {
+                                                ?>
+                                                <tr class="table-item text-nowrap">
+                                                <td class="p-3 ps-0 ps-2 text-center" colspan="6">
+                                                <?php echo "No Records Found"; ?>
+                                                </td>
+                                                <?php
+                                                } 
+                                                else
+                                                {
+                                                while ($rowAnnouncementList = mysqli_fetch_assoc($resAnnouncementList))
+                                                {
+                                                $Ancmnt_Image = $rowAnnouncementList['Ancmnt_Image']; 
+                                                $Ancmnt_Title = $rowAnnouncementList['Ancmnt_Title']; 
+                                                $Ancmnt_Link = $rowAnnouncementList['Ancmnt_Link']; 
+                                                $isButton = $rowAnnouncementList['isButton']; 
+                                                $isActive = $rowAnnouncementList['isActive']; 
+                                                ?>
+                                                </tr>
                                                     <tr class="table-item text-nowrap">
                                                         <td class="p-3 ps-0 ps-2">
-                                                            1
+                                                        <!-- ../../../assets/media/announcement/ -->
+                                                        <a href="<?php echo '../../../assets/media/announcement/'.$Ancmnt_Image; ?>" target="_blank">
+                                                        <?php echo $Ancmnt_Image; ?>
+                                                        </a>
                                                         </td>
                                                         <td class="p-3 ps-0 ps-3">
-                                                        2
+                                                        <?php echo $Ancmnt_Title; ?>
                                                         </td>
                                                         <td class="p-3 ps-0 ps-3">
-                                                            3
+                                                        <?php echo $Ancmnt_Link; ?>
                                                         </td>
                                                         <td class="p-3 ps-0 ps-3">
-                                                            4
+                                                        <?php echo $isButton; ?>
                                                         </td>
                                                         <td class="p-3 ps-0 ps-3">
-                                                            5
+                                                        <?php echo $isActive; ?>
                                                         </td>
                                                     </tr>
+                                                    <?php } }?>
                                                 </tbody>
                                             </table>
                                         </div>
