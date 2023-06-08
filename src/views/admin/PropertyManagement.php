@@ -134,8 +134,7 @@
                                                 
 
                                             ?>
-                                            <tr class="table-item text-nowrap"  onclick="openModal('<?php echo $email ?>','<?php echo $actual_use ?>','<?php echo $assessed_value ?>','<?php echo $tdn ?>','<?php echo $receipt ?>');">
-                                            
+                                            <tr class="table-item text-nowrap cursor-pointer"  onclick="openModal('<?php echo $email ?>','<?php echo $actual_use ?>','<?php echo $assessed_value ?>','<?php echo $tdn ?>','<?php echo $receipt ?>');">
                                                     <td class="p-3 ps-0 ps-2">
                                                     <?php echo $tdn; ?>
                                                     </td>
@@ -152,7 +151,8 @@
                                                     <?php echo $assessed_value; ?>
                                                     </td>
                                                     <td class="p-3 ps-0 ps-3">
-                                                    <?php echo $actual_use; ?>
+                                                    <!-- $actual_use; -->
+                                                    <?php echo implode(' ', array_map('ucfirst',explode('_', $actual_use))) ?>
                                                     </td>
                                                 </tr>
                                                 <?php } }?>
@@ -206,7 +206,7 @@
             <input type="checkbox" id="quarter4" name="quarter4" disabled>
             <label for="vehicle1">Q4</label>
             </div>
-            <!-- Tax Due: <input type="text" class="form-control" id="tax-due" disabled> -->
+            Tax Due: <input type="text" class="form-control" id="tax-due" disabled>
           </div>
         </form>
       </div>
