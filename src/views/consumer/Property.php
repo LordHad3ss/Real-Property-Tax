@@ -132,7 +132,7 @@
                                                             <?php echo $assessed_value; ?>
                                                         </td>
                                                         <td class="p-3 ps-0 ps-3">
-                                                            <?php echo $actual_use; ?>
+                                                            <?php echo implode(' ', array_map('ucfirst',explode('_', $actual_use))) ?>
                                                         </td>
                                                     </tr>
                                                 <?php } }?>
