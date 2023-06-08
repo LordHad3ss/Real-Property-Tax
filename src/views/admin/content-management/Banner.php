@@ -97,7 +97,6 @@
                                                 </tr>
                                                     <tr class="table-item text-nowrap">
                                                         <td class="p-3 ps-0 ps-2">
-                                                        <!-- ../../../assets/media/announcement/ -->
                                                         <a href="<?php echo '../../../assets/media/announcement/'.$Ancmnt_Image; ?>" target="_blank">
                                                         <?php echo $Ancmnt_Image; ?>
                                                         </a>
@@ -196,3 +195,14 @@
 </html>
 
 <script src="../../../assets/js/addbanner.js"></script>
+<script>
+    const fileInput = document.getElementById('file-input');
+    const fileList = document.getElementById('file-list');
+    const fileLabel = document.getElementById('file-label');
+    const removeFile = document.getElementById('remove-file');
+    const subTitle = document.getElementById('sub-title');
+    const uploadedImageLink = document.getElementById('uploaded-image-link');
+    const iconUploaded = document.getElementById('icon');
+</script>
+<script src="../../../assets/js/simple_upload.js"></script>
+

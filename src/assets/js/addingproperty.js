@@ -104,7 +104,7 @@ function openModal(email,actual,assessedVal,tdn,quarter) {
     $("#actual-use").val(actual);
     $("#assessed-value").val(assessedVal);
     $("#tax-due").val(taxDue);
-    $("#sendEmail").prop('visibility', visible);
+    // $("#sendEmail").prop('visibility', visible);
     //document.getElementById("sendEmail").style.visibility = "visible";
     
     const Quarter = quarter.split(",");
@@ -135,5 +135,5 @@ function openModal(email,actual,assessedVal,tdn,quarter) {
 }
 
 function sendMail() {
-    alert('dasdas');
+    
 }
