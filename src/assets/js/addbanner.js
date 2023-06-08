@@ -23,7 +23,7 @@ function saveAnnouncement() {
       xhr.onload = function() {
         if (this.status == 200) {
 
-            console.log(xhr.responseText);
+            //console.log(xhr.responseText);
             saveAnnouncement2();
         };
       };
@@ -66,9 +66,7 @@ function saveAnnouncement2() {
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) 
         {
-            var myModal = new bootstrap.Modal(document.getElementById("banner"), {backdrop: 'static', keyboard: false});
-            myModal.hide();
-
+            location.reload();
         }   
     }
     http.send(params);
