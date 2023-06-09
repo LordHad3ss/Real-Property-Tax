@@ -9,7 +9,7 @@ session_destroy();
 ?>
 <div class="row gx-0 g-0">
     <div class="col-12 col-md-12 col-lg-8 bg-primary justify-content-center d-flex">
-        <img src="src/assets/media/engineer.svg" width="66%">
+        <img src="src/assets/media/banner3.png" width="100%" height="600">
     </div>
     <div class="col-12 col-md-12 col-lg pad-xy-20p mt-5 pt-3">
         <div class="row gx-0 g-0">
