@@ -61,36 +61,14 @@
                                             <div class="carousel-caption">
                                                 <div class="row gx-0 g-0 justify-content-end">
                                                     <div class="col-auto">
-                                                        <button class="button-3"><?php echo $Ancmnt_Title ?></button>
+                                                        <a href="<?php echo $Ancmnt_Link ?>" target="_blank">
+                                                            <button class="button-3"><?php echo $Ancmnt_Title ?></button>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <?php } ?>
-                                        <!-- <div class="carousel-item" data-bs-interval="10000" style="height: 100%;">
-                                            <img src="../../assets/media/banner2.jpeg" class="d-block w-100 h-100 object-fit-contain rounded" alt="...">
-                                            <div class="carousel-caption">
-                                                <h5 class="text-white">First slide label</h5>
-                                                <p class="text-white">Some representative placeholder content for the first slide.</p>
-                                                <div class="row gx-0 g-0 justify-content-end">
-                                                    <div class="col-auto">
-                                                        <button class="button-3">Click Here</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <!-- <div class="carousel-item" data-bs-interval="10000" style="height: 100%;">
-                                            <img src="../../assets/media/logo.png" class="d-block w-100 h-100 object-fit-contain rounded" alt="...">
-                                            <div class="carousel-caption">
-                                                <h5 class="text-white">First slide label</h5>
-                                                <p class="text-white">Some representative placeholder content for the first slide.</p>
-                                                <div class="row gx-0 g-0 justify-content-end">
-                                                    <div class="col-auto">
-                                                        <button class="button-3">Click Here</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
                                     </div>
                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
